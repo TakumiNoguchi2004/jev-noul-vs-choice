@@ -26,25 +26,28 @@ about this setting, not a universal claim about `choice` or `noul`.
 ## Headline result
 
 Same question ("my neighbour rolled a fair six-sided die — which face came
-up?"), asked two ways: one 6-way `choice` question, vs. six independent
-`noul` questions ("is it face N?"). n=50 trials each. Every face has true
-P = 1/6 ≈ 0.167.
+up?"), asked two ways: one 7-way `choice` question (6 real faces + an
+impossible 7th, `choice/impossible_face_check.py`), vs. seven independent
+`noul` questions ("is it face N?", `noul/calibration_check.py`). n=50 trials
+each. Every real face has true P = 1/6 ≈ 0.167; face 7 has true P = 0.
 
-| face | true P | `choice` (6-way) mean P | `noul` (independent) mean P |
+| face | true P | `choice` mean P | `noul` mean P |
 |---|---:|---:|---:|
-| 1 | 0.167 | **0.835** | 0.167 |
-| 2 | 0.167 | 0.012 | 0.157 |
-| 3 | 0.167 | 0.039 | 0.159 |
-| 4 | 0.167 | 0.049 | 0.177 |
-| 5 | 0.167 | 0.007 | 0.167 |
-| 6 | 0.167 | 0.059 | 0.170 |
-| 7 (impossible) | 0.0 | *n/a — not a valid `choice` option* | 0.010 |
+| 1 | 0.167 | **0.769** | 0.167 |
+| 2 | 0.167 | 0.020 | 0.157 |
+| 3 | 0.167 | 0.037 | 0.159 |
+| 4 | 0.167 | 0.051 | 0.177 |
+| 5 | 0.167 | 0.010 | 0.167 |
+| 6 | 0.167 | 0.075 | 0.170 |
+| 7 (impossible) | 0.0 | 0.038 | 0.010 |
 
-`choice` puts 83.5% of its entire probability mass on face 1 and crushes
-every other face to 0.007–0.059 — it isn't just picking "1" as an answer,
-its whole reported *distribution* is wrong. `noul` recovers something very
-close to the true uniform 1/6 for every face, independently, and correctly
-assigns near-zero to the impossible 7th face it was never told didn't exist.
+`choice` puts 77% of its entire probability mass on face 1 and crushes every
+other face to 0.010–0.075 — it isn't just picking "1" as an answer, its
+whole reported *distribution* is wrong. It doesn't even single out the
+impossible face 7 as clearly impossible: at 0.038, `choice` rates it *more*
+likely than two of the six real faces (2 and 5). `noul` recovers something
+very close to the true uniform 1/6 for every real face, independently, and
+correctly, consistently assigns face 7 a nearly-zero 0.010.
 
 ## Why: root-causing the `choice` failure (not a prompt-engineering artifact)
 
@@ -133,6 +136,7 @@ always saved to `results/.../trials.jsonl` alongside a `summary.json`.
 | script | what it tests | key result dirs |
 |---|---|---|
 | `choice/baseline_check.py` | Baseline replication of the original repo's finding via OpenRouter instead of Vercel AI Gateway | `results/choice/baseline/openrouter_v1/` |
+| `choice/impossible_face_check.py` | Same as baseline, but with a 7th, impossible option added — the `choice`-side counterpart to `noul`'s face 7 question, used for the headline table | `results/choice/impossible_face/openrouter_v1/` |
 | `choice/bias_check.py` | 8 named conditions disentangling position bias, key-label bias, content bias, and description verbosity in the 6-way `choice` | `results/choice/bias/<condition>/`, `.../summary.json` |
 | `noul/calibration_check.py` | `noul` in isolation (`isolated_openrouter_v1`), plus `list_in_state` (option list added to `state`) and `list_in_instructions` (added to each question's own `instructions`) | `results/noul/calibration/<condition>/` |
 | `choice/binary_check.py` | Simplest possible `choice`: 2-way yes/no per face | `results/choice/binary/openrouter_v1/` |
