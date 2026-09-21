@@ -112,6 +112,17 @@ underlying model — echoing the well-documented human/LLM bias toward specific
 something at random." `noul`'s independent per-proposition probability
 appears to go through a different, much better-calibrated path.
 
+## Practical takeaway
+
+If you're building on Jev and actually need the *probabilities* to mean
+something — not just the top pick — don't trust `choice`'s `probabilities`
+as a real distribution over more than a couple of options. Based on what we
+saw here, it's safer to break the question into one `noul` call per option
+("is it A?", "is it B?", ...) and read the probabilities off those instead.
+`choice` still tells you a *plausible* answer; it just can't be trusted to
+tell you *how sure* it is, or to correctly weigh several options against
+each other.
+
 ## Reproducing
 
 Requires an OpenRouter API key with access to `typesafe/jev-1.13`
