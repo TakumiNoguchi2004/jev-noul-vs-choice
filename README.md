@@ -128,13 +128,9 @@ every condition in sequence):
 
 ## Relationship to the original repo
 
-Independent project — not affiliated with TypeSafe, OpenRouter, or the
-original repo's author. Same spirit and general methodology (probability
-calibration experiments against Jev's typed questions), but a different
-codebase (Python + OpenRouter here vs. Node.js + Vercel AI Gateway there) and
-a complementary focus: this project root-causes *why* `choice` miscalibrates
-and contrasts it against `noul`, rather than documenting *that* it
-miscalibrates.
+Independent project, not affiliated with TypeSafe, OpenRouter, or the original
+repo's author — this one root-causes *why* `choice` miscalibrates rather than
+documenting *that* it does.
 
 ## License
 
