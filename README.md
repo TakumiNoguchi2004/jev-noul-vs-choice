@@ -25,19 +25,26 @@ about this setting, not a universal claim about `choice` or `noul`.
 
 ## Headline result
 
-| question type | mean reported P(winning face) | true P |
-|---|---:|---:|
-| `choice`, 6-way ("which face came up?") | **0.835** | 0.167 |
-| `choice`, 2-way per face ("is it face N? yes/no") | **0.078 – 0.156** per face | 0.167 |
-| `noul`, 6 independent "is it face N?" questions | **0.157 – 0.177** per face | 0.167 |
+Same question ("my neighbour rolled a fair six-sided die — which face came
+up?"), asked two ways: one 6-way `choice` question, vs. six independent
+`noul` questions ("is it face N?"). n=50 trials each. Every face has true
+P = 1/6 ≈ 0.167.
 
-6-way `choice` always answers "1" (50/50 trials, confidence ~0.83). 2-way
-`choice` never flips to "yes" either (expected, since true P(yes)=0.167 < 0.5
-for every face) but its underlying probabilities are only moderately off and
-show an order-dependent decay (face 1 closest to true, face 6 furthest) —
-miscalibrated, but nowhere near as collapsed as the 6-way case. `noul`
-spreads its answers correctly across all six faces and assigns 0.01 to the
-impossible 7th face (`stdev = 0.000` — it never wavers on that one).
+| face | true P | `choice` (6-way) mean P | `noul` (independent) mean P |
+|---|---:|---:|---:|
+| 1 | 0.167 | **0.835** | 0.167 |
+| 2 | 0.167 | 0.012 | 0.157 |
+| 3 | 0.167 | 0.039 | 0.159 |
+| 4 | 0.167 | 0.049 | 0.177 |
+| 5 | 0.167 | 0.007 | 0.167 |
+| 6 | 0.167 | 0.059 | 0.170 |
+| 7 (impossible) | 0.0 | *n/a — not a valid `choice` option* | 0.010 |
+
+`choice` puts 83.5% of its entire probability mass on face 1 and crushes
+every other face to 0.007–0.059 — it isn't just picking "1" as an answer,
+its whole reported *distribution* is wrong. `noul` recovers something very
+close to the true uniform 1/6 for every face, independently, and correctly
+assigns near-zero to the impossible 7th face it was never told didn't exist.
 
 ## Why: root-causing the `choice` failure (not a prompt-engineering artifact)
 
