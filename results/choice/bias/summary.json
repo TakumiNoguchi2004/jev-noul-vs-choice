@@ -1,0 +1,278 @@
+{
+  "T1": {
+    "condition": "T1",
+    "n_trials": 50,
+    "choice_key_distribution": {
+      "1": 50
+    },
+    "chosen_face_distribution": {
+      "1": 50
+    },
+    "frac_chosen_was_first_written_key": 0.16,
+    "mean_reported_prob_of_chosen": 0.831,
+    "total_cost_usd": 0.0009534000000000006
+  },
+  "T2": {
+    "condition": "T2",
+    "n_trials": 50,
+    "choice_key_distribution": {
+      "A": 50
+    },
+    "chosen_face_distribution": {
+      "1": 50
+    },
+    "frac_chosen_was_first_written_key": 1.0,
+    "mean_reported_prob_of_chosen": 0.8158,
+    "total_cost_usd": 0.0009534000000000006
+  },
+  "T3": {
+    "condition": "T3",
+    "n_trials": 50,
+    "choice_key_distribution": {
+      "A": 50
+    },
+    "chosen_face_distribution": {
+      "1": 50
+    },
+    "frac_chosen_was_first_written_key": 0.16,
+    "mean_reported_prob_of_chosen": 0.8694,
+    "total_cost_usd": 0.0009534000000000006
+  },
+  "T4": {
+    "condition": "T4",
+    "n_trials": 50,
+    "choice_key_distribution": {
+      "5": 8,
+      "2": 6,
+      "4": 6,
+      "6": 12,
+      "3": 8,
+      "1": 10
+    },
+    "chosen_face_distribution": {
+      "1": 48,
+      "6": 1,
+      "4": 1
+    },
+    "frac_chosen_was_first_written_key": 0.2,
+    "mean_reported_prob_of_chosen": 0.6134,
+    "total_cost_usd": 0.0009534000000000006
+  },
+  "T5": {
+    "condition": "T5",
+    "n_trials": 50,
+    "choice_key_distribution": {
+      "xmit": 1,
+      "9asc": 1,
+      "yq86": 1,
+      "dutk": 1,
+      "ldzi": 1,
+      "brec": 1,
+      "5xl6": 1,
+      "uwzv": 1,
+      "4nt4": 1,
+      "bbyk": 1,
+      "5m8q": 1,
+      "w4bm": 1,
+      "kg7d": 1,
+      "g7wf": 1,
+      "imkq": 1,
+      "z2jg": 1,
+      "ybf3": 1,
+      "pzrj": 1,
+      "cbdc": 1,
+      "93ej": 1,
+      "vp4m": 1,
+      "d8p6": 1,
+      "oj7p": 1,
+      "w7hk": 1,
+      "6svy": 1,
+      "4sbz": 1,
+      "wzu1": 1,
+      "ukwh": 1,
+      "e0gt": 1,
+      "s1j4": 1,
+      "vb1b": 1,
+      "ione": 1,
+      "zwpq": 1,
+      "69b8": 1,
+      "ubak": 1,
+      "qj8d": 1,
+      "4qkm": 1,
+      "bl3w": 1,
+      "msdz": 1,
+      "96e0": 1,
+      "0y2l": 1,
+      "qzs4": 1,
+      "9vaj": 1,
+      "hpbd": 1,
+      "ll0a": 1,
+      "m5xm": 1,
+      "50as": 1,
+      "4nzv": 1,
+      "wlrv": 1,
+      "s24x": 1
+    },
+    "chosen_face_distribution": {
+      "1": 50
+    },
+    "frac_chosen_was_first_written_key": 1.0,
+    "mean_reported_prob_of_chosen": 0.7718,
+    "total_cost_usd": 0.0009781380000000006
+  },
+  "T6": {
+    "condition": "T6",
+    "n_trials": 50,
+    "choice_key_distribution": {
+      "xmit": 1,
+      "vlm1": 1,
+      "ic81": 1,
+      "dutk": 1,
+      "ldzi": 1,
+      "1s0f": 1,
+      "0inx": 1,
+      "d3nq": 1,
+      "itrk": 1,
+      "on0t": 1,
+      "y8pd": 1,
+      "pan1": 1,
+      "rp1n": 1,
+      "1nma": 1,
+      "imkq": 1,
+      "p0vv": 1,
+      "r1ft": 1,
+      "pzrj": 1,
+      "avng": 1,
+      "i33l": 1,
+      "1q7f": 1,
+      "stis": 1,
+      "mpjo": 1,
+      "dtzi": 1,
+      "6svy": 1,
+      "kln3": 1,
+      "eqid": 1,
+      "i0bs": 1,
+      "e0gt": 1,
+      "qfi0": 1,
+      "vb1b": 1,
+      "ione": 1,
+      "zwpq": 1,
+      "mdwx": 1,
+      "ubak": 1,
+      "l1fp": 1,
+      "hk1y": 1,
+      "cnuo": 1,
+      "wd1j": 1,
+      "erb1": 1,
+      "ahnh": 1,
+      "pov1": 1,
+      "u0fy": 1,
+      "ju0t": 1,
+      "ll0a": 1,
+      "3moo": 1,
+      "havt": 1,
+      "dyel": 1,
+      "ymc1": 1,
+      "biju": 1
+    },
+    "chosen_face_distribution": {
+      "1": 12,
+      "4": 9,
+      "5": 6,
+      "3": 8,
+      "2": 5,
+      "6": 10
+    },
+    "frac_chosen_was_first_written_key": 0.24,
+    "mean_reported_prob_of_chosen": 0.2978,
+    "total_cost_usd": 0.0008395379999999994
+  },
+  "T7": {
+    "condition": "T7",
+    "n_trials": 50,
+    "choice_key_distribution": {
+      "xmit": 1,
+      "9asc": 1,
+      "ms9j": 1,
+      "kih8": 1,
+      "zaf9": 1,
+      "liss": 1,
+      "61rf": 1,
+      "hnlb": 1,
+      "qkr3": 1,
+      "1qze": 1,
+      "y8pd": 1,
+      "yd9w": 1,
+      "rp1n": 1,
+      "1nma": 1,
+      "imkq": 1,
+      "nkp6": 1,
+      "5sig": 1,
+      "svln": 1,
+      "ywtw": 1,
+      "yvdw": 1,
+      "kubx": 1,
+      "stis": 1,
+      "oj7p": 1,
+      "puu6": 1,
+      "6svy": 1,
+      "kln3": 1,
+      "wzu1": 1,
+      "nkzz": 1,
+      "l8r7": 1,
+      "qfi0": 1,
+      "qn3n": 1,
+      "bm0f": 1,
+      "9tb9": 1,
+      "6t0u": 1,
+      "vz0h": 1,
+      "j6md": 1,
+      "g3ra": 1,
+      "bl3w": 1,
+      "6q61": 1,
+      "voet": 1,
+      "ggqw": 1,
+      "pov1": 1,
+      "hkct": 1,
+      "949p": 1,
+      "zobj": 1,
+      "q6d2": 1,
+      "7ml2": 1,
+      "7n2d": 1,
+      "wlrv": 1,
+      "biju": 1
+    },
+    "chosen_face_distribution": {
+      "1": 50
+    },
+    "frac_chosen_was_first_written_key": 0.16,
+    "mean_reported_prob_of_chosen": 0.8236,
+    "total_cost_usd": 0.0009781380000000006
+  },
+  "T8": {
+    "condition": "T8",
+    "n_trials": 50,
+    "choice_key_distribution": {
+      "1": 50
+    },
+    "chosen_face_distribution": {
+      "1": 50
+    },
+    "frac_chosen_was_first_written_key": 1.0,
+    "mean_reported_prob_of_chosen": 0.8968,
+    "total_cost_usd": 0.0017723999999999997
+  },
+  "shuffled_numeric_keys": {
+    "condition": "shuffled_numeric_keys",
+    "n_trials": 50,
+    "choice_key_distribution": {
+      "1": 50
+    },
+    "chosen_face_distribution": {
+      "1": 50
+    },
+    "frac_chosen_was_first_written_key": 0.16,
+    "mean_reported_prob_of_chosen": 0.831,
+    "total_cost_usd": 0.0009534000000000006
+  }
+}

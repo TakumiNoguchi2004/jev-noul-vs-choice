@@ -1,0 +1,41 @@
+{
+  "n_trials": 50,
+  "faces": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "per_target": {
+    "2": {
+      "chosen_face_dist": {
+        "3": 47,
+        "2": 3
+      },
+      "frac_yes_won": 0.06,
+      "mean_p_yes": 0.3565999999999999
+    },
+    "3": {
+      "chosen_face_dist": {
+        "3": 50
+      },
+      "frac_yes_won": 1.0,
+      "mean_p_yes": 0.5504000000000001
+    },
+    "4": {
+      "chosen_face_dist": {
+        "3": 50
+      },
+      "frac_yes_won": 0.0,
+      "mean_p_yes": 0.29419999999999996
+    },
+    "5": {
+      "chosen_face_dist": {
+        "3": 50
+      },
+      "frac_yes_won": 0.0,
+      "mean_p_yes": 0.15440000000000006
+    }
+  },
+  "total_cost_usd": 0.001661100000000001
+}

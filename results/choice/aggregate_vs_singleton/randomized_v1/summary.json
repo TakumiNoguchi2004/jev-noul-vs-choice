@@ -1,0 +1,26 @@
+{
+  "n_trials": 50,
+  "choice_distribution": {
+    "no": 50
+  },
+  "mean_probabilities": {
+    "yes": 0.0494,
+    "no_2": 0.0484,
+    "no": 0.9022
+  },
+  "true_probabilities": {
+    "yes": 0.16666666666666666,
+    "no_2": 0.16666666666666666,
+    "no": 0.6666666666666666
+  },
+  "total_cost_usd": 0.0008736000000000007,
+  "face1_as_yes_choice_dist": {
+    "no": 10
+  },
+  "face1_as_no2_choice_dist": {
+    "no": 12
+  },
+  "face1_absent_choice_dist": {
+    "no": 28
+  }
+}

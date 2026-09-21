@@ -1,0 +1,54 @@
+{
+  "n_trials": 50,
+  "per_target": {
+    "1": {
+      "chosen_face_dist": {
+        "1": 50
+      },
+      "frac_yes_won": 1.0,
+      "frac_face1_won": 1.0,
+      "mean_p_yes": 0.8078000000000002
+    },
+    "2": {
+      "chosen_face_dist": {
+        "1": 50
+      },
+      "frac_yes_won": 0.0,
+      "frac_face1_won": 1.0,
+      "mean_p_yes": 0.019800000000000012
+    },
+    "3": {
+      "chosen_face_dist": {
+        "1": 50
+      },
+      "frac_yes_won": 0.0,
+      "frac_face1_won": 1.0,
+      "mean_p_yes": 0.0742
+    },
+    "4": {
+      "chosen_face_dist": {
+        "1": 50
+      },
+      "frac_yes_won": 0.0,
+      "frac_face1_won": 1.0,
+      "mean_p_yes": 0.04480000000000002
+    },
+    "5": {
+      "chosen_face_dist": {
+        "1": 50
+      },
+      "frac_yes_won": 0.0,
+      "frac_face1_won": 1.0,
+      "mean_p_yes": 0.020000000000000007
+    },
+    "6": {
+      "chosen_face_dist": {
+        "1": 50
+      },
+      "frac_yes_won": 0.0,
+      "frac_face1_won": 1.0,
+      "mean_p_yes": 0.03980000000000002
+    }
+  },
+  "total_cost_usd": 0.0026313000000000013
+}

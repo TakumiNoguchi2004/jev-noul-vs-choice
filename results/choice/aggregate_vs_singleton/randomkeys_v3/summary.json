@@ -1,0 +1,39 @@
+{
+  "n_trials": 50,
+  "n_aggregate_won": 50,
+  "n_singleton_won": 0,
+  "mean_p_aggregate": 0.9084,
+  "per_face": {
+    "1": {
+      "appearances": 12,
+      "win_rate": 0.0,
+      "mean_p_when_singleton": 0.18500000000000003
+    },
+    "2": {
+      "appearances": 24,
+      "win_rate": 0.0,
+      "mean_p_when_singleton": 0.021666666666666678
+    },
+    "3": {
+      "appearances": 14,
+      "win_rate": 0.0,
+      "mean_p_when_singleton": 0.058571428571428566
+    },
+    "4": {
+      "appearances": 18,
+      "win_rate": 0.0,
+      "mean_p_when_singleton": 0.022777777777777782
+    },
+    "5": {
+      "appearances": 15,
+      "win_rate": 0.0,
+      "mean_p_when_singleton": 0.010666666666666666
+    },
+    "6": {
+      "appearances": 17,
+      "win_rate": 0.0,
+      "mean_p_when_singleton": 0.026470588235294128
+    }
+  },
+  "total_cost_usd": 0.0008819579999999995
+}
