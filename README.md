@@ -126,11 +126,6 @@ every condition in sequence):
 | `random_keys_shuffled_values` | same random keys, plus the face-to-key mapping independently shuffled |
 | `redundant_value_list` | keys "1".."6" fixed order, but each value redundantly restates the full 6-outcome list |
 
-## Cost
-
-The full investigation (~900 API calls across every experiment above) cost
-about **$0.023** total.
-
 ## Relationship to the original repo
 
 Independent project — not affiliated with TypeSafe, OpenRouter, or the
