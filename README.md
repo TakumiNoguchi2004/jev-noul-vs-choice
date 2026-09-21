@@ -10,24 +10,34 @@ of the true 16.7%.
 This project asks the natural follow-up: **is that a property of Jev's
 probabilities in general, or specific to how the question is asked?**
 
-**Short answer: it's specific to the `choice` question type.** The identical
-"fair die" scenario, asked through Jev's `noul` question type (an independent
-probability for a single proposition) instead of `choice` (pick one of N
-labeled options), is calibrated to within about a percentage point of the true
-1/6 for every face — and correctly assigns near-zero probability to an
-impossible 7th face. `choice` stays badly broken no matter how the prompt is
-varied.
+**For this fair-die scenario, the failure is specific to the `choice`
+question type, and its severity scales with the number of options.** The
+identical uncertainty, asked through Jev's `noul` question type (an
+independent probability for a single proposition) instead of `choice` (pick
+one of N labeled options), is calibrated to within about a percentage point
+of the true 1/6 for every face — and correctly assigns near-zero probability
+to an impossible 7th face. `choice` stays miscalibrated across every prompt
+variation we tried, but not uniformly badly: the 6-way version collapses
+almost completely, while the same proposition asked as a 2-way (yes/no)
+`choice` is still biased but far less extreme (see below). We only tested one
+family of synthetic dice/probability scenarios, so treat this as evidence
+about this setting, not a universal claim about `choice` or `noul`.
 
 ## Headline result
 
 | question type | mean reported P(winning face) | true P |
 |---|---:|---:|
-| `choice` (6-way, "which face came up?") | **0.835** | 0.167 |
-| `noul` (6 independent "is it face N?" questions) | **0.157 – 0.177** per face | 0.167 |
+| `choice`, 6-way ("which face came up?") | **0.835** | 0.167 |
+| `choice`, 2-way per face ("is it face N? yes/no") | **0.078 – 0.156** per face | 0.167 |
+| `noul`, 6 independent "is it face N?" questions | **0.157 – 0.177** per face | 0.167 |
 
-`choice` always answers "1" (50/50 trials); `noul` spreads its answers
-correctly across all six faces and assigns 0.01 to the impossible 7th face
-(`stdev = 0.000` — it never wavers on that one).
+6-way `choice` always answers "1" (50/50 trials, confidence ~0.83). 2-way
+`choice` never flips to "yes" either (expected, since true P(yes)=0.167 < 0.5
+for every face) but its underlying probabilities are only moderately off and
+show an order-dependent decay (face 1 closest to true, face 6 furthest) —
+miscalibrated, but nowhere near as collapsed as the 6-way case. `noul`
+spreads its answers correctly across all six faces and assigns 0.01 to the
+impossible 7th face (`stdev = 0.000` — it never wavers on that one).
 
 ## Why: root-causing the `choice` failure (not a prompt-engineering artifact)
 
@@ -71,15 +81,25 @@ prompt-level explanation we could think of:
    keeps a faint echo of its earlier magnetism — even losing, its mean
    probability (0.185) stays much closer to the true value than every other
    losing face (0.011–0.059).
+8. **Severity scales with the number of options.** The same "is it face N?"
+   proposition, asked as a 2-way `choice` (`scripts/choice/binary_check.py`)
+   instead of competing against 5 siblings in one 6-way `choice`, is still
+   biased (0.078–0.156 vs. true 0.167, with an order-dependent decay from
+   face 1 to face 6) but nowhere near as collapsed as the 6-way case. Fewer
+   competing options seems to leave `choice` much closer to honest.
 
 **Working theory:** `choice`'s failure isn't something a caller can prompt
-their way around — it looks like an internal decoding routine that collapses
-onto a near-deterministic single winner (something like an extremely
-low-temperature softmax) regardless of genuine uncertainty. When several
-options are genuinely tied, the "winner" is decided by a content-level prior
-baked into the underlying model — echoing the well-documented human/LLM bias
-toward specific "psychologically salient" numbers (1, 3, 7, ...) when asked to
-"pick something at random." `noul`'s independent per-proposition probability
+their way around — the pattern (near-total collapse at 6 options, milder but
+still real distortion at 2, `noul` staying honest throughout) is consistent
+with an over-sharpened normalization or decision step somewhere in how
+`choice` turns several labeled options into a distribution, rather than
+anything about the wording of a given prompt. We can't see Jev's internals
+through the API, so we can't pin down *which* step that is — only that it
+behaves as if one exists. When several options are genuinely tied, the
+"winner" seems to be decided by a content-level prior baked into the
+underlying model — echoing the well-documented human/LLM bias toward specific
+"psychologically salient" numbers (1, 3, 7, ...) when asked to "pick
+something at random." `noul`'s independent per-proposition probability
 appears to go through a different, much better-calibrated path.
 
 ## Reproducing
